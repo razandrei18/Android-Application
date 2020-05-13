@@ -17,7 +17,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".CazareEditActivity"></activity>
+        <activity android:name=".RestauranteEditActivity"></activity>
+        <activity android:name=".CazareEditActivity" />
         <activity android:name=".AdminActivity" />
         <activity
             android:name=".MainActivity"

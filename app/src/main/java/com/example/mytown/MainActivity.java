@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout drawer;
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
-    int images[] = {R.drawable.ghh2,R.drawable.primaria_gh,R.drawable.ghh, R.drawable.ghh4, R.drawable.ghh3, R.drawable.ghh5};
+    int[] images = {R.drawable.ghh2,R.drawable.primaria_gh,R.drawable.ghh, R.drawable.ghh4, R.drawable.ghh3, R.drawable.ghh5};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if( savedInstanceState == null) {
             Fragment homeFragment = new HomeFragment();
+            firebaseAuth = FirebaseAuth.getInstance();
+            firebaseUser = firebaseAuth.getCurrentUser();
             getSupportFragmentManager().beginTransaction().add(R.id.fragment_place, new HomeFragment(), "home").addToBackStack(String.valueOf(homeFragment)).commit();
             navigationView.setCheckedItem(R.id.nav_info);
         }
@@ -58,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        firebaseAuth =firebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
         MenuInflater inflater = getMenuInflater();
         if(firebaseUser == null){

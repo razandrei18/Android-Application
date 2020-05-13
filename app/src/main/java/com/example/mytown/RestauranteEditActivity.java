@@ -27,11 +27,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CazareEditActivity extends AppCompatActivity {
+public class RestauranteEditActivity extends AppCompatActivity {
     private static final int RESULT_LOAD_IMAGE1 = 1;
     EditText numeUnitate;
     EditText detaliiUnitate;
-    EditText infoContact;
     TextView alert;
     Button inserareBtn;
     Button alegereImgBtn;
@@ -41,19 +40,15 @@ public class CazareEditActivity extends AppCompatActivity {
     private ProgressDialog progressDialog;
     ArrayList<Uri> ImageList = new ArrayList<>();
     private Uri imageUri;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cazare_edit);
-
-        numeUnitate= findViewById(R.id.edit_cazareName);
-        detaliiUnitate = findViewById(R.id.edit_cazareDetalii);
-        infoContact = findViewById(R.id.edit_cazareInfoContact);
-        alert = findViewById(R.id.edit_textViewImg);
-        inserareBtn = findViewById(R.id.edit_ButonTrimitereCazare);
-        alegereImgBtn = findViewById(R.id.edit_chooseImg);
+        setContentView(R.layout.activity_restaurante_edit);
+        numeUnitate= findViewById(R.id.edit_restaurantName);
+        detaliiUnitate = findViewById(R.id.edit_restaurantDetalii);
+        alert = findViewById(R.id.edit_restauranteTextViewImg);
+        inserareBtn = findViewById(R.id.edit_ButonTrimitereRestaurante);
+        alegereImgBtn = findViewById(R.id.edit_chooseImgRest);
         firebaseFirestore = FirebaseFirestore.getInstance();
         mReference = FirebaseStorage.getInstance().getReference();
         progressDialog = new ProgressDialog(this);
@@ -70,20 +65,17 @@ public class CazareEditActivity extends AppCompatActivity {
             }
         });
 
-
         inserareBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String nume = numeUnitate.getText().toString().trim();
                 String detalii = detaliiUnitate.getText().toString().trim();
-                String informatii = infoContact.getText().toString().trim();
 
                 //adaugare informatii in Firebase Firestore
-                Map<String, String> cazareMap = new HashMap<>();
+                Map<String, String> restauranteMap = new HashMap<>();
 
-                cazareMap.put("denumire", nume);
-                cazareMap.put("detalii", detalii);
-                cazareMap.put("informatii", informatii);
+                restauranteMap.put("denumire", nume);
+                restauranteMap.put("detalii", detalii);
 
                 //adaugare imagini in Firebase Storage
                 progressDialog.show();
@@ -94,23 +86,23 @@ public class CazareEditActivity extends AppCompatActivity {
                     imageName.putFile(individualImage).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            Toast.makeText(CazareEditActivity.this, "Done", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RestauranteEditActivity.this, "Done", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
 
 
-                firebaseFirestore.collection("unitati_cazare").add(cazareMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                firebaseFirestore.collection("restaurante").add(restauranteMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(CazareEditActivity.this, "Inserare facută cu succes!", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(CazareEditActivity.this, CazareEditActivity.class));
+                        Toast.makeText(RestauranteEditActivity.this, "Inserare facută cu succes!", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(RestauranteEditActivity.this, CazareEditActivity.class));
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         String error = e.getMessage();
-                        Toast.makeText(CazareEditActivity.this, "Eroare: " + error, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RestauranteEditActivity.this, "Eroare: " + error, Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -135,7 +127,7 @@ public class CazareEditActivity extends AppCompatActivity {
                 alert.setText("Au fost selectate " + ImageList.size() + " imagini.");
             }
             else {
-                Toast.makeText(CazareEditActivity.this, "Vă rugăm selectați cel puțin 2 imagini", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RestauranteEditActivity.this, "Vă rugăm selectați cel puțin 2 imagini", Toast.LENGTH_SHORT).show();
             }
         }
     }

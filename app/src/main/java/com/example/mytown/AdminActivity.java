@@ -36,5 +36,18 @@ public class AdminActivity extends AppCompatActivity {
                 startActivity(new Intent(getBaseContext(), CazareEditActivity.class));
             }
         });
+
+        editRestauranteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), RestauranteEditActivity.class));
+            }
+        });
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        FirebaseAuth.getInstance().signOut();
     }
 }
