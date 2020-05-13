@@ -99,12 +99,22 @@
             android:textStyle="bold" />
         <Button
             android:id="@+id/edit_ButonTrimitereCazare"
-
             android:layout_width="160dp"
             android:layout_height="40dp"
             android:text="Inserare"
             android:textAlignment="center"
             android:layout_marginTop="60dp"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimary"
+            android:textColor="#FFFF"/>
+
+        <Button
+            android:id="@+id/edit_ButonInapoiCazare"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:text="Meniul principal"
+            android:textAlignment="center"
+            android:layout_marginTop="14dp"
             android:layout_gravity="center"
             android:background="@color/colorPrimary"
             android:textColor="#FFFF"/>

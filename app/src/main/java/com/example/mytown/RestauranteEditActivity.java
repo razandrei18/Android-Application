@@ -40,6 +40,8 @@ public class RestauranteEditActivity extends AppCompatActivity {
     private ProgressDialog progressDialog;
     ArrayList<Uri> ImageList = new ArrayList<>();
     private Uri imageUri;
+    Button backBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +55,14 @@ public class RestauranteEditActivity extends AppCompatActivity {
         mReference = FirebaseStorage.getInstance().getReference();
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Vă rugăm asteptați...");
+        backBtn = findViewById(R.id.edit_ButonInapoiRestaurante);
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), AdminActivity.class));
+            }
+        });
 
         alegereImgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
