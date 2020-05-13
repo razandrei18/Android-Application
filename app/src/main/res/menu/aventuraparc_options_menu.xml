@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/echipament_button"
+        android:title="Echipament și Instructaj"></item>
+    <item
+        android:id="@+id/preturi_button"
+        android:title="Prețuri / Contact"></item>
+    <item
+        android:id="@+id/program_button"
+        android:title="Program"></item>
+</menu>

@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/item_layout"
+    android:padding="8dp">
+
+
+    <ImageView
+        android:id="@+id/item_imageview"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/title_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="times new roman"
+        android:paddingTop="10dp"
+        android:text="Titlu Obiectiv"
+        android:textAlignment="center"
+        android:textColor="@color/textColor"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detalii ➠"
+        android:textAlignment="viewEnd"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:paddingRight="8dp"/>
+
+
+</LinearLayout>

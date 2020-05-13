@@ -1,0 +1,145 @@
+<resources>
+    <string name="app_name">G.H.City
+    </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="description">Turismul oraşului beneficiază de faptul că localitatea se află pe traseul turistic de la E la V – DN 17 Suceava -Vatra Dornei -Cluj din care se desprind majoritatea acceselor spre obiectivele turistice din zonă. Vatra orașului se află la confluența râului Humor cu râul Moldova, de la acest fapt provenind numele orașului.  Oraşul Gura Humorului este una dintre cele mai importante destinaţii turistice ale Bucovinei.</string>
+    <string name="ag_descript">Oraşul Gura Humorului este situat în depresiunea intramontană cu acelaşi nume, dezvoltată la confluenţa Moldovei cu râul Humor, la o altitudine de 490 m, între culmile împădurite ale Obcinei Mari, Obcinei Voroneţului şi Obcinei Humorului.
+        Din punct de vedere etimologic, obcina aminteşte de proprietatea comună, devălmaşă de altă dată (ocină) a ţăranilor liberi asupra pădurilor şi păşunilor de pe acest tip de culmi.
+Aşezarea Voroneţ se află într-o zonă de deal (Obcina Voroneţului – Măgura 816 m) la o altitudine de cca. 400 – 500 m. Fostul sat Voroneţ, în prezent localitate componentă a oraşului Gura Humorului, s-a dezvoltat în jurul Mănăstirii Voroneţ, de-a lungul drumului local ce leagă cele două localităţi, drum ce urmăreşte valea pârâului Voroneţ până la confluenţa acestuia cu râul Moldova.
+Oraşul are un cadru natural pitoresc, fiind înconjurat de obcini acoperite cu păduri de foioase şi răşinoase, iar climatul este plăcut şi reconfortant. Zona Voroneţ reprezintă un reper al limitei dintre arealul pădurilor de foioase şi cele de conifere.</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="descriere_m_voronet">Mănăstirea Voroneț se află chiar pe teritoriul oraşului, la 4 kilometri de centrul administrativ. Prima atestare documentară a Mănăstirii Voroneţ este 22 ianuarie 1472, când Ştefan cel Mare dădea călugărilor – în frunte cu egumenul Misail – scutire de vamă pentru două măji de peşte care vor fi aduse de la Chilia sau din altă parte.
+    În locul vechiului schit de lemn, Ştefan Vodă a ridicat actuala biserică, cu hramul Sfântul Gheorghe. Pisania bisericii arată că lucrările de construcţie au durat mai puţin de patru luni, de la 26 mai până la 14 septembrie 1488. Mitropoliţii Teofan I şi Grigorie Roşca s-au îngrijit de pictarea ei în exterior, cel din urmă adăugându-i şi un pridvor.
+Este o biserică de dimensiuni reduse (25,5 m lungime fără pridvor, 7,7 m lungimea naosului şi pronaosului, 10,5 m în dreptul absidelor laterale).
+Între bisericile cu frescă exterioară, biserica Mănăstirii Voroneţ, supranumită Capela sixtină a estului european” este, fără îndoială, cea mai renumită şi mai bine cunoscută în lume.
+Pictura exterioară se datorează lui Grigorie Roşca, eruditul teolog care a urmărit personal realizarea operei călugărilor-zugravi anonimi. Rezultatul a fost excepţional: Judecata de Apoi ocupă tot peretele de apus într-o uriaşă compoziţie pe cinci registre, unică în arta orientului creştin. Specialiştii o consideră, prin amploare, ştiinţa efectului decorativ şi strălucirea policromiei, superioară compoziţiilor de la Athos şi celor de la Camposanto (Pisa), demnă de a fi alăturată Capelei Sixtine din Roma, mozaicurilor geamiei Kahrie (Istanbul), imaginilor de la San Marco (Veneţia), din Siena, Assisi, Orvieto. Originalitatea artistului constă şi în curajul său de a introduce în scenă instrumente muzicale moldoveneşti (bucium, cobză), peisaj local, ştergare, veşminte populare – totul pe un fond albastru ce a născut sintagma albastru de Voroneţ egală verdelui Veronese şi roşului Titzian.</string>
+    <string name="descriere_Mhumor">
+        La nici 6 km de centrul oraşului Gura Humorului, urmând DJ 177, se află Mănăstirea Humor, cu hramul Adormirii Maicii Domnului (15august), ctitoria logofătului Teodor Bubuiog şi a soţiei sale, Anastasia. Ridicată în anul 1530 în vecinătatea unei vechi mănăstiri (consemnată la 1415 şi căzută în ruină la începutul secolului al XV-lea, mănăstire de care este legată şi prima consemnare, la 1490, a Seliştei Poiana de la Gura Humorului), biserica Mănăstirii Humor este armonios proporţionată deşi este lipsită de turlă.
+În zona mediană, între pronaos şi naos, apare gropniţa deasupra căreia se află o încăpere specială, tainiţa, destinată adăpostirii tezaurului mănăstirii, în caz de primejdie.
+Din zidurile de incintă se păstrează doar turnul construit în anul 1641, prin îngrijirea domnitorului Vasile Lupu.
+Pictura interioară şi exterioară, dominată de culoarea roşie (roşul-brun, roşul-purpuriu şi roşul-violet) a fost realizată în anul 1535. Tema centrală a picturii exterioare este asediul Constantinopolului, situat la baza celor 24 de scene ale Imnului acatist de pe faţada sudică.
+În interior, reţine atenţia portretul doamnei Elena (soţia lui Petru Rareş) din tabloul votiv, realizat în naosul bisericii. Criticii de specialitate consideră acest portret ca fiind cel mai reprezentativ pentru întreaga pictură medievală moldovenească.
+    </string>
+    <string name="descriere_muzeu">Muzeul Obiceiurilor Populare din Bucovina este o institutie singulara în reteaua culturala româneasca, fiind singurul muzeu care a reusit sa transpuna cu mijloace muzeotehnice obisnuite acel segment de spiritualitate definitorie pentru orice etnie, popor, natiune : traditia populara. Tematica muzeului a fost gândita ca o calatorie virtuala în universul spiritual al satului bucovinean de la sfârsitul secolului al XIX-lea. Vizitatorului Muzeului Obiceiurilor Populare din Bucovina i se dezvaluie taine nebanuite ale calendarului popular bucovinean începând cu practicile de la Sfântul Andrei, continuând cu cele specifice Craciunului, Anului Nou, Bobotezei, începuturilor de an agrar, pastoral, apicol si pomicol, sarbatorii pascale, sarbatorii solstitiale a Sânzienelor si încheind cu practici specifice sarbatorilor de toamna, Sfânta Parascheva ( Vinerea Mare ) si Sfântul Dumitru.</string>
+    <string name="descriere_muzeu2">În cadrul muzeului functioneaza si Galeria de Arta “Georges Cotos” , gratie unei donatii generoase ( 200 de tablouri ) facuta de un om extraordinar – pictorul francez de origine româna Georges Cotos, nascut în anul 1915, în Straja Bucovinei. Elogiat de critica de specialitate, bine cotat pe piata de arta europeana si nu numai, Georges Cotos a expus în mari capitale ale lumii uimind, de fiecare data, prin forta expresiei plastice si prin explozia de culoare a lucrarilor sale nonfigurative.</string>
+    <string name="detalii_tehnice_partie1">
+        <br> \n</br>
+        <br>➤ lungimea pârtiei – 1.478 m \n</br>
+        <br>➤ diferența de nivel – 285 m \n</br>
+        <br>➤ un echipament telescaun pe o lungime de 1.332 m \n</br>
+        <br>➤ un sistem electronic de bileterie 5 tunuri de zăpadă amplasate pe pârtie\n</br>
+        <br>➤ 1 maşină de bătut zăpada\n</br>
+        <br>➤ drum de acces către pârtie modernizat\n</br>
+        <br>➤ parcare amenajată la baza pârtiei – 344 locuri\n</br>
+        <br>➤ instalație nocturna\n</br>
+    </string>
+
+    <string name="detalii_tehnice_partie2">
+        <br> \n</br>
+        <br>➤ lunginea instalației – 1.332 m \n</br>
+        <br>➤ altitudinea la baza – 477 m \n</br>
+        <br>➤ altitudinea la vârf  – 762 m \n</br>
+        <br>➤ durata unei urcări – 9’36” \n</br>
+        <br>➤ număr cabine – 97 (a cate 4 locuri) \n</br>
+        <br>➤ viteza de deplasare – 2,3 m/s \n</br>
+        <br>➤ capacitatea de transport – 1200 pers/h \n</br>
+    </string>
+
+    <string name="piscina_arinis">
+        <br> \n</br>
+        <br>➤ Mobil: 0730.650703 \n</br>
+        <br>➤ Fix: 0230.230555 \n</br>
+        <br>➤ Email: arinisgh@gmail.com \n</br>
+    </string>
+    <string name="detaliiT_piscina_acop">
+        <br> \n</br>
+        <br>➤ Bazinul de înot  are o suprafaţă de 625mp, conţine cca. 1400 mc de apă, având o adâncime între 2,35m şi 2,6m, şi o zonă supraînălţată faţă de fund şi îngrădită pentru copii sau începători cu o adâncime de cca 1,15 m;\n</br>
+        <br>➤ Pereţii şi fundul piscinei sunt placaţi cu vitroceramică;\n</br>
+        <br>➤ Piscina este dotată cu un sistem de recirculare şi filtrare a apei şi cu sistem de sterilizare a apei raze ultraviolete;\n</br>
+        <br>➤ Temperatura apei din piscină este menţinută permanent la valoarea de 29°C +/- 1°C;\n</br>
+        <br>➤ Temperatura aerului din piscină este menţinut cu min. un grad plus faţă de cel al apei, indiferent de anotimp;\n</br>
+        <br>➤ Încălzirea incintei este realizată prin pardoseală, calorifere şi sistemul de ventilaţie;\n</br>
+        <br>➤ Utilizatorii piscinei pot beneficia de şezlonguri, saună, jacuzzi şi servicii de masaj;\n</br>
+        <br>➤ Tratarea şi dezinfecţia apei este asigurată permanent cu ajutorul unui sistem automat;\n</br>
+        <br>➤ Piscina acoperită este dotată cu 2 vestiare, pentru femei şi respectiv pentru bărbaţi situate la demisol, ce conţin câte 3 toalete, câte 4 duşuri şi dulapuri pentru haine, cu încuietori şi chei numerotate;\n</br>
+        <br>➤ La accesul în piscină, între cele 2 vestiare, există o cameră de primire unde garderobiera de serviciu îndrumă clienţii către vestiarul adecvat, le prezintă condiţiile de acces în piscină şi regulamentul de organizare şi funcţionare;\n</br>
+        <br>➤ Securitatea persoanelor din piscină este supravegheată de câte 2 salvamari, pe tot timpul şedinţei de înot;\n</br>
+
+    </string>
+
+    <string name="detaliiT_piscina_descopAdulti">
+        <br> \n</br>
+        <br>➤ Bazinul descoperit pentru adulţi are o suprafaţă de 483 mp, o adâncime medie de 2,5 m fiind căptuşit cu liner. \n</br>
+        <br>➤ Funcţionarea acestuia este programată doar în perioada sezonului estival;\n</br>
+        <br>➤ Bazinul este dotat cu un sistem de recirculare şi filtrare a apei la fel ca şi piscina acoperită.\n</br>
+        <br>➤ Temperatura apei este asigurată la valoarea de 28°C +/- 1°C, chiar dacă, în perioada de funcţionare  temperatura exterioară este sub această valoare;
+\n</br>
+        <br>➤ Bazinul este dotat perimetral cu duşuri cu apă a cărei temperatură este de aprox. 40°C;\n</br>
+        <br>➤ Utilizatorii piscinei pot beneficia de şezlonguri, în limita locurilor disponibile;\n</br>
+        <br>➤ Securitatea persoanelor din piscină este supravegheată de câte 2 salvamari, pe tot timpul şedinţei de înot;\n</br>
+
+    </string>
+    <string name="detaliiT_piscina_descopCopii">
+        <br> \n</br>
+        <br>➤ Bazinul descoperit pentru copii are o suprafaţă de 393 mp, o adâncime de la 0,4m până la 0,8 m fiind căptuşit cu liner; \n</br>
+        <br>➤ Funcţionarea acestuia este programată doar în perioada sezonului estival;\n</br>
+        <br>➤ Bazinul este dotat cu un sistem de recirculare şi filtrare a apei la fel ca şi piscina acoperită, inclusiv sistem de sterilizare cu raze ultraviolete;\n</br>
+        <br>➤ Temperatura apei este asigurată la valoarea de 28°C +/- 1°C, chiar dacă, în perioada de funcţionare  temperatura exterioară este sub această valoare;\n</br>
+        <br>➤ Bazinul este dotat perimetral cu duşuri cu apă a cărei temperatură este de aprox. 40°C;\n</br>
+        <br>➤ Utilizatorii piscinei pot beneficia de şezlonguri, în limita locurilor disponibile;\n</br>
+        <br>➤ Piscinele exterioare sunt deservite de o clădire ce conţine 6 vestiare pentru schimbarea hainelor şi două grupuri sanitare femei/bărbaţi, dotate fiecare cu câte 4 WC-uri şi 4 chiuvete;\n</br>
+        <br>➤ Securitatea persoanelor este supravegheată permanent de 2 salvamari dotaţi cu un foişor din care au bună vizibilitate asupra ambelor piscine descoperite pentru a putea interveni rapid în caz de nevoie.\n</br>
+
+    </string>
+    <string name="info_gen_AvParc">
+        <br> \n</br>
+        <br> Fie ca sunteti cu familia, firma sau clasa dvs. cele opt trasee (cu obstacole si provocari) sunt practicabile si fara abilitati speciale sau cunostinte anterioare si sunt disponibile pentru toata lumea incepand cu 4 ani.\n</br>
+        <br> Angajatii nostri va vor instrui cu privire la tehnicile de siguranta, apoi se impune principiul propriei sigurante. Complexul este mereu ingrijit de o persoana specializata.\n</br>
+        <br> Parcul de Aventuri se afla la o distanta de 3 minute cu masina sau 15 minute pe jos de centru si gara Statiunii Turistice – Gura Humorului.\n</br>
+    </string>
+    <string name="echipament_aventura">
+        <br> Va recomandam imbracaminte comoda pentru timpul liber, incaltaminte sportiva sau incaltaminte usoara de drumetii. Nu sunt permise in parcul de aventuri haine neincheiate, fuste lungi, incaltaminte neadecvata (sandale,slapi), din motive de siguranta. \n</br>
+        <br> Parul lung trebuie prins. Echipamentul complet de siguranta vă va fi pus la dispozitie.\n</br>
+    </string>
+    <string name="instructaj_aventura">
+        <br> Instructajul va dura in jur de 15 minute. Pe traseul de instructaj angajatii nostri va vor explica cum se foloseste echipamentul si, in primul rand, la ce trebuie sa acordati atentie pentru a mentine siguranta dvs. Spre sfarsit puteti finaliza traseul de instruire pe cont propriu, aplicandu-se principiul propriei sigurante.\n</br>
+        <br> Important: angajatii nostri va vor supraveghea si va pot ajuta in caz de intrebari si probleme.\n</br>
+
+    </string>
+    <string name="cerinte_aventura">
+        <br> \n</br>
+        <br>➤ Varsta minima 4 ani\n</br>
+        <br>➤ Copiii sub 12 ani trebuie sa fie insotiti de catre un adult\n</br>
+        <br>➤ Copiii intre 12 si 16 ani trebuie sa fie insotiti de catre un adult sau sa fie supravegheati de jos\n</br>
+        <br>➤ Max. 120 kg, greutatea corporala\n</br>
+        <br>➤ Persoanele sub influenta alcoolului sau a drogurilor nu sunt admise in parc\n</br>
+        <br>➤ Participarea la instructaj este obligatorie\n</br>
+        <br>➤ Echipamentul va fi purtat complet si conform instructiunilor\n</br>
+        <br>➤ Indicatiile angajatilor sunt obligatorii\n</br>
+        <br>➤ Echipamentul se returneaza fara atentionare dupa 2 ore (obligatie de plata ulterioara)\n</br>
+
+
+    </string>
+    <string name="preturi_aventuraParc">
+        <br> * La scoli si grupuri de copii cu participanti mai tineri de 16 ani este obligatorie prezenta unui insotitor (gratuit). Grupul trebuie sa cuprinda mai mult de 10 persoane.\n</br>
+        <br> ** Copiii mai mici de 10 ani trebuie insotiti de catre unul din parinti. Nu sunt acceptate grupuri de copii intre 4 si 9 ani insotite de educatori.\n</br>
+    </string>
+    <string name="contact_aventura">
+        <br>\n</br>
+        <br> Escalada Park, Gura Humorului, judeţul Suceava\n</br>
+        <br> Telefon: 0744.777.060\n</br>
+        <br> E-mail: contact@parc-aventuri.ro\n</br>
+    </string>
+    <string name="orar_aventura">
+        <br> \n</br>
+        <br>➤ Echipamentul se inchiriaza pentru 2 ore.\n</br>
+        <br>➤ Ultima intrare va fi cu 2 ore inainte de incheierea programului.\n</br>
+        <br>➤ In timpul sezonului fluxul de persoane este mare si ar fi incorect sa facem rezervari. Veniti pur si simplu!\n</br>
+        <br>➤ Parcul de aventuri este deschis si pe ploaie dar se poate inchide din motive de siguranta (conditii meteorologice nefavorabile).\n</br>
+        <br>➤ In zilele de duminica si de sarbatori Parcul de Aventuri s-ar putea sa aiba perioade de asteptare. Va recomandam ca la sfarsiturile de saptamana frumoase sa vizitati dimineata Parcul de aventuri.\n</br>
+    </string>
+    <string name="adminText">Alegeți de mai jos categoria pe care doriți să o editați:</string>
+</resources>

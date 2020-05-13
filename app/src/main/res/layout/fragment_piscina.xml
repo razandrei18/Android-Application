@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".atractii.mytown.piscina.mytown.PiscinaFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Piscina Ariniș"
+            android:textColor="@color/colorPrimary"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:padding="4dp"/>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/piscina_viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="220dp" />
+
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:text="Mai multe imagini ➮"
+        android:textStyle="bold"
+        android:textAlignment="viewEnd"
+        android:layout_marginBottom="2dp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Contact Ariniș"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:background="#DFB877"
+                    android:textColor="@color/titleColor"
+                    android:paddingLeft="6dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="99dp"
+                    android:text="@string/piscina_arinis"
+                    android:textSize="18sp"
+                    android:layout_marginTop="-8dp"
+                    android:paddingLeft="6dp"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/tarife_piscina_acoperita"
+                    android:layout_marginTop="-28dp"
+                    android:layout_marginBottom="-20dp"
+                    android:layout_marginLeft="-6dp"
+                    android:paddingRight="6dp"/>
+
+            </LinearLayout>
+
+
+
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</FrameLayout>
