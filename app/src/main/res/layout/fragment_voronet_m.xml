@@ -27,14 +27,69 @@
             android:layout_width="match_parent"
             android:layout_height="220dp"
             android:scaleType="centerCrop" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="12sp"
+            android:layout_marginBottom="2dp"
             android:text="Mai multe imagini ➮"
-            android:textStyle="bold"
             android:textAlignment="viewEnd"
-            android:layout_marginBottom="2dp"/>
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical"
+            android:paddingLeft="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_marginLeft="6dp"
+                android:text="Program sezon turistic (mai – septembrie):"
+                android:textColor="#FFFF"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:text="Luni – Duminică: 08:30 – 20:00"
+                android:textColor="#FFFF"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:text="Program extrasezon (octombrie – aprilie):"
+                android:textColor="#FFFF"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:text="Luni – Duminică: 09:00 – 17:00"
+                android:textColor="#FFFF"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:text="Taxa de vizitare: Adulți: 5 lei   Copii, elevi, studenți: 2 lei"
+                android:textColor="#FFFF"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
         <ScrollView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -43,57 +98,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="@color/textColor2">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:layout_marginLeft="6dp"
-                    android:text="Program sezon turistic (mai – septembrie):"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/textColor"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="6dp"
-                    android:text="Luni – Duminică: 08:30 – 20:00"
-                    android:textSize="16dp"
-                    android:textColor="@color/textColor"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="6dp"
-                    android:text="Program extrasezon (octombrie – aprilie):"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/textColor"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="6dp"
-                    android:text="Luni – Duminică: 09:00 – 17:00"
-                    android:textSize="16dp"
-                    android:textColor="@color/textColor"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="6dp"
-                    android:text="Taxa de vizitare: Adulți: 5 lei   Copii, elevi, studenți: 2 lei"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/textColor"/>
-
-                </LinearLayout>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -116,14 +120,10 @@
                     android:textColor="@color/textColor"
                     android:textSize="18dp" />
 
-
             </LinearLayout>
-
 
         </ScrollView>
 
-
     </LinearLayout>
-
 
 </FrameLayout>

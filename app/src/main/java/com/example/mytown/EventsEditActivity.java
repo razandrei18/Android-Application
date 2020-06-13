@@ -4,12 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,44 +28,47 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CazareEditActivity extends AppCompatActivity {
-    private static final int RESULT_LOAD_IMAGE1 = 1;
-    EditText numeUnitate;
-    EditText detaliiUnitate;
-    EditText infoContact;
-    EditText emailContact;
+public class EventsEditActivity extends AppCompatActivity {
+    EditText eventName;
+    EditText eventDetails;
     TextView alert;
-    Button inserareBtn;
-    Button alegereImgBtn;
+    Button alegereDataBtn;
+    TextView afisareData;
+    Button alegereImgEvent;
+    Button insertEvent;
+    Button backBtn;
     FirebaseFirestore firebaseFirestore;
     StorageReference mReference;
     int upload_count = 0;
     private ProgressDialog progressDialog;
     ArrayList<Uri> ImageList = new ArrayList<>();
     private Uri imageUri;
-    Button backBtn;
-
+    private static final int RESULT_LOAD_IMAGE1 = 1;
+    DatePickerDialog.OnDateSetListener onDateSetListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cazare_edit);
+        setContentView(R.layout.activity_events_edit);
 
-        numeUnitate= findViewById(R.id.edit_cazareName);
-        detaliiUnitate = findViewById(R.id.edit_cazareDetalii);
-        infoContact = findViewById(R.id.edit_cazareInfoContact);
-        emailContact = findViewById(R.id.edit_cazareEmailContact);
-        alert = findViewById(R.id.edit_textViewImg);
-        inserareBtn = findViewById(R.id.edit_ButonTrimitereCazare);
-        alegereImgBtn = findViewById(R.id.edit_chooseImg);
-        firebaseFirestore = FirebaseFirestore.getInstance();
-        mReference = FirebaseStorage.getInstance().getReference();
+        eventName= findViewById(R.id.edit_eventName);
+        eventDetails= findViewById(R.id.edit_eventDetalii);
+        alert= findViewById(R.id.edit_textViewImgEvent);
+        alegereImgEvent= findViewById(R.id.edit_chooseImgEvent);
+        insertEvent= findViewById(R.id.edit_ButonTrimitereEvent);
+        alegereDataBtn =  findViewById(R.id.edit_chooseDate);
+        afisareData = findViewById(R.id.events_showDate);
+        backBtn= findViewById(R.id.edit_ButonInapoiEvent);
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Vă rugăm asteptați...");
-        backBtn = findViewById(R.id.edit_ButonInapoiCazare);
+        firebaseFirestore = FirebaseFirestore.getInstance();
+        mReference = FirebaseStorage.getInstance().getReference();
+
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +77,42 @@ public class CazareEditActivity extends AppCompatActivity {
             }
         });
 
-        alegereImgBtn.setOnClickListener(new View.OnClickListener() {
+        alegereDataBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar calendar = Calendar.getInstance();
+                int anul = calendar.get(Calendar.YEAR);
+                int luna = calendar.get(Calendar.MONTH);
+                int ziua = calendar.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog dialog = new DatePickerDialog(EventsEditActivity.this, android.R.style.Theme_Holo_Light_Dialog_MinWidth, onDateSetListener, anul, luna, ziua);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
+            }
+        });
+
+        onDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+               month=month+1;
+
+               String data = dayOfMonth + "/" + month + "/" + year;
+               afisareData.setText(data);
+            }
+        };
+
+        alegereImgEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Alegeți imaginile dorite"), RESULT_LOAD_IMAGE1);
+            }
+        });
+
+        alegereImgEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
@@ -82,49 +124,47 @@ public class CazareEditActivity extends AppCompatActivity {
         });
 
 
-        inserareBtn.setOnClickListener(new View.OnClickListener() {
+        insertEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nume = numeUnitate.getText().toString().trim();
-                String detalii = detaliiUnitate.getText().toString().trim();
-                String informatii = infoContact.getText().toString().trim();
-                String emailC =  emailContact.getText().toString().trim();
+                String nume = eventName.getText().toString().trim();
+                String detalii = eventDetails.getText().toString().trim();
+                String dataInceperii = afisareData.getText().toString().trim();
+
 
                 //adaugare informatii in Firebase Firestore
-                Map<String, String> cazareMap = new HashMap<>();
+                Map<String, String> eventsMap = new HashMap<>();
 
-                cazareMap.put("denumire", nume);
-                cazareMap.put("descriere", detalii);
-                cazareMap.put("detalii_contact", informatii);
-                cazareMap.put("email_contact", emailC);
+                eventsMap.put("denumire", nume);
+                eventsMap.put("detalii", detalii);
+                eventsMap.put("data_inceperii", dataInceperii);
 
                 //adaugare imagini in Firebase Storage
                 progressDialog.show();
                 StorageReference ImagesFolder = FirebaseStorage.getInstance().getReference().child(nume);
                 for(upload_count = 0; upload_count < ImageList.size(); upload_count++){
                     Uri individualImage = ImageList.get(upload_count);
-                    final StorageReference imageName = ImagesFolder.child(individualImage.getLastPathSegment());
+                    StorageReference imageName = ImagesFolder.child("Imaginea" +individualImage.getLastPathSegment());
                     imageName.putFile(individualImage).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            Toast.makeText(CazareEditActivity.this, "Imaginea " + imageName +" adăugată cu succes!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(EventsEditActivity.this, "Done", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
-                progressDialog.hide();
 
 
-                firebaseFirestore.collection("unitati_cazare").add(cazareMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                firebaseFirestore.collection("evenimente_locale").add(eventsMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(CazareEditActivity.this, "Inserare facută cu succes!", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(CazareEditActivity.this, CazareEditActivity.class));
+                        Toast.makeText(EventsEditActivity.this, "Inserare facută cu succes!", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(EventsEditActivity.this, CazareEditActivity.class));
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         String error = e.getMessage();
-                        Toast.makeText(CazareEditActivity.this, "Eroare: " + error, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EventsEditActivity.this, "Eroare: " + error, Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -136,6 +176,7 @@ public class CazareEditActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode == RESULT_LOAD_IMAGE1 &&resultCode== RESULT_OK){
+
             if(data.getClipData() != null){
                 int countImages = data.getClipData().getItemCount();
                 int currentImageSelect= 0;
@@ -148,7 +189,7 @@ public class CazareEditActivity extends AppCompatActivity {
                 alert.setText("Au fost selectate " + ImageList.size() + " imagini.");
             }
             else {
-                Toast.makeText(CazareEditActivity.this, "Vă rugăm selectați cel puțin 2 imagini", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EventsEditActivity.this, "Vă rugăm selectați cel puțin 2 imagini", Toast.LENGTH_SHORT).show();
             }
         }
     }

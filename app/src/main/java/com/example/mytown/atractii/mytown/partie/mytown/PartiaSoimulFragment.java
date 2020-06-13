@@ -1,6 +1,7 @@
 package com.example.mytown.atractii.mytown.partie.mytown;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -17,12 +18,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 
+import com.example.mytown.MainActivity;
 import com.example.mytown.R;
 import com.example.mytown.objectives.mytown.ImageAdapter;
 
 
 public class PartiaSoimulFragment extends Fragment {
-    int partieImages[]={R.drawable.partie11,R.drawable.partie1,R.drawable.partie2,R.drawable.partie3,R.drawable.partie4,R.drawable.partie5};
+    int[] partieImages ={R.drawable.partie11,R.drawable.partie1,R.drawable.partie2,R.drawable.partie3,R.drawable.partie4,R.drawable.partie5};
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -54,7 +56,7 @@ public class PartiaSoimulFragment extends Fragment {
                 return true;
 
             case R.id.galerie_partie_button:
-                getFragmentManager().beginTransaction().replace(R.id.fragment_place, new GalerieFragment(), "galeriePartie").addToBackStack(String.valueOf(new GalerieFragment())).commit();
+                startActivity(new Intent(getActivity(), VideoPartie.class));
             default:
                 return false;
         }

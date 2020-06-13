@@ -20,7 +20,8 @@
             android:text="Preţuri parc"
             android:textAlignment="center"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="times new roman"/>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -62,7 +63,8 @@
                     android:text="Contact"
                     android:textAlignment="center"
                     android:textSize="24sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:fontFamily="times new roman"/>
 
                 <TextView
                     android:layout_width="match_parent"

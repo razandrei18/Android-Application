@@ -33,14 +33,21 @@ public class AdminActivity extends AppCompatActivity {
         editCazareBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getBaseContext(), CazareEditActivity.class));
+                startActivity(new Intent(getBaseContext(), com.example.mytown.CazareEditActivity.class));
             }
         });
 
         editRestauranteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getBaseContext(), RestauranteEditActivity.class));
+                startActivity(new Intent(getBaseContext(), com.example.mytown.RestauranteEditActivity.class));
+            }
+        });
+
+        editEventsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), com.example.mytown.EventsEditActivity.class));
             }
         });
     }

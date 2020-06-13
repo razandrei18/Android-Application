@@ -142,4 +142,18 @@ Pictura interioară şi exterioară, dominată de culoarea roşie (roşul-brun, 
         <br>➤ In zilele de duminica si de sarbatori Parcul de Aventuri s-ar putea sa aiba perioade de asteptare. Va recomandam ca la sfarsiturile de saptamana frumoase sa vizitati dimineata Parcul de aventuri.\n</br>
     </string>
     <string name="adminText">Alegeți de mai jos categoria pe care doriți să o editați:</string>
+    <string name="string_instructoriPartie">
+         <br> \n</br>
+         <br>○ Catargiu Cezar - 0730 650 701 \n</br>
+         <br>○ Cojoc Ionut - 0740 931 593 \n</br>
+         <br>○ Flutur Ionut - 0746 549 527 \n</br>
+         <br>○ Ionascu Nicolai - 0744 626 746 \n</br>
+         <br>○ Vieru Vlad (Tazz) - 0740 120 993 \n</br>
+    </string>
+    <string name="string_tarifeInstructori">
+        <br> \n</br>
+         <br>○ 1 pers. - 70 lei/pers/ora \n</br>
+         <br>○ 2-3 pers - 60 lei/pers/ora \n</br>
+         <br>○ 3-5 pers - 50 lei/pers/ora \n</br>
+    </string>
 </resources>

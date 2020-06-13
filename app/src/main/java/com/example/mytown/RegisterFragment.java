@@ -59,7 +59,7 @@ public class RegisterFragment extends Fragment {
         registerEmail = getView().findViewById(R.id.edittext_mail);
         registerButton = getView().findViewById(R.id.register_button);
         registerLogin = getView().findViewById(R.id.textview_logare);
-        firebaseAuth = firebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
         progressBar = getView().findViewById(R.id.progressBar);
 
         if(firebaseAuth.getCurrentUser() != null)
@@ -105,7 +105,7 @@ public class RegisterFragment extends Fragment {
         registerLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), MainActivity.class));
+                getFragmentManager().beginTransaction().replace(R.id.fragment_place, new LoginFragment(), "loginFrag").addToBackStack(String.valueOf(new LoginFragment())).commit();
             }
         });
     }

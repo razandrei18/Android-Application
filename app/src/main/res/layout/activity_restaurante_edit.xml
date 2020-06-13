@@ -36,7 +36,7 @@
             android:id="@+id/edit_restaurantDetalii"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Descrierea restaurantului(informatii de contact, adresa, etc.)"
+            android:hint="Descrierea restaurantului"
             android:textAlignment="center"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
@@ -45,6 +45,18 @@
             android:background="#FFFFFF"
             android:padding="4dp"/>
 
+        <EditText
+            android:id="@+id/edit_restaurantContact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Informații de contact"
+            android:textAlignment="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"
+            android:inputType="text"
+            android:background="#FFFFFF"
+            android:padding="4dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"

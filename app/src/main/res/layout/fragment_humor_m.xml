@@ -38,6 +38,45 @@
             android:textStyle="bold"
             android:textAlignment="viewEnd"
             android:layout_marginBottom="2dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical"
+            android:layout_marginBottom="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_marginLeft="6dp"
+                android:text="Program vizitare: "
+                android:textColor="#FFFF"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:text="Luni – Duminică: 08:00 – 22:00"
+                android:textColor="#FFFF"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:text="Preț de intrare: 5 lei/adult "
+                android:textColor="#FFFF"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
         <ScrollView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -47,41 +86,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/textColor2"
-                    android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
-                        android:layout_marginLeft="6dp"
-                        android:text="Program vizitare: "
-                        android:textColor="@color/textColor"
-                        android:textSize="18dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="6dp"
-                        android:text="Luni – Duminică: 08:00 – 22:00"
-                        android:textColor="@color/textColor"
-                        android:textSize="16dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="6dp"
-                        android:text="Preț de intrare: 5 lei/adult "
-                        android:textColor="@color/textColor"
-                        android:textSize="18dp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
 
                 <TextView
                     android:layout_width="match_parent"

@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/detalii_partie_id"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".atractii.mytown.partie.mytown.DetaliiPartieFragment">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:background="#560A0000"
+            android:background="@color/colorPrimary"
             android:padding="4dp"
             android:text="Detalii tehnice"
-            android:textColor="#3371A7"
+            android:fontFamily="times new roman"
+            android:textColor="#FFFF"
             android:textSize="30sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textAlignment="center"/>
 
 
         <TextView
@@ -28,9 +28,10 @@
             android:layout_height="wrap_content"
             android:padding="4dp"
             android:text="Detalii tehnice pârtie"
+            android:fontFamily="times new roman"
             android:textColor="@color/colorPrimary"
             android:textSize="22sp"
-            android:textStyle="italic"
+            android:textStyle="bold"
             android:layout_marginLeft="16dp" />
 
         <TextView
@@ -39,6 +40,7 @@
             android:padding="6dp"
             android:text="@string/detalii_tehnice_partie1"
             android:textSize="20sp"
+            android:textColor="#000000"
             android:layout_marginTop="-24dp"/>
 
         <TextView
@@ -46,9 +48,10 @@
             android:layout_height="wrap_content"
             android:padding="4dp"
             android:text="Detalii tehnice telescaun"
+            android:fontFamily="times new roman"
             android:textColor="@color/colorPrimary"
             android:textSize="22sp"
-            android:textStyle="italic"
+            android:textStyle="bold"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="6dp"/>
 
@@ -58,10 +61,8 @@
             android:padding="4dp"
             android:text="@string/detalii_tehnice_partie2"
             android:textSize="20sp"
+            android:textColor="#000"
             android:layout_marginTop="-22dp"/>
 
 
-    </LinearLayout>
-
-
-</FrameLayout>
+</LinearLayout>

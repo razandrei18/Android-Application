@@ -29,8 +29,9 @@ import java.util.Map;
 
 public class RestauranteEditActivity extends AppCompatActivity {
     private static final int RESULT_LOAD_IMAGE1 = 1;
-    EditText numeUnitate;
-    EditText detaliiUnitate;
+    EditText numeRest;
+    EditText detaliiRest;
+    EditText dateContact;
     TextView alert;
     Button inserareBtn;
     Button alegereImgBtn;
@@ -46,8 +47,9 @@ public class RestauranteEditActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurante_edit);
-        numeUnitate= findViewById(R.id.edit_restaurantName);
-        detaliiUnitate = findViewById(R.id.edit_restaurantDetalii);
+        numeRest= findViewById(R.id.edit_restaurantName);
+        detaliiRest = findViewById(R.id.edit_restaurantDetalii);
+        dateContact = findViewById(R.id.edit_restaurantContact);
         alert = findViewById(R.id.edit_restauranteTextViewImg);
         inserareBtn = findViewById(R.id.edit_ButonTrimitereRestaurante);
         alegereImgBtn = findViewById(R.id.edit_chooseImgRest);
@@ -78,35 +80,38 @@ public class RestauranteEditActivity extends AppCompatActivity {
         inserareBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nume = numeUnitate.getText().toString().trim();
-                String detalii = detaliiUnitate.getText().toString().trim();
+                String nume = numeRest.getText().toString().trim();
+                String detalii = detaliiRest.getText().toString().trim();
+                String dateCont = dateContact.getText().toString().trim();
 
                 //adaugare informatii in Firebase Firestore
                 Map<String, String> restauranteMap = new HashMap<>();
 
                 restauranteMap.put("denumire", nume);
-                restauranteMap.put("detalii", detalii);
+                restauranteMap.put("descriere", detalii);
+                restauranteMap.put("detalii_contact", dateCont);
 
                 //adaugare imagini in Firebase Storage
                 progressDialog.show();
                 StorageReference ImagesFolder = FirebaseStorage.getInstance().getReference().child(nume);
                 for(upload_count = 0; upload_count < ImageList.size(); upload_count++){
                     Uri individualImage = ImageList.get(upload_count);
-                    StorageReference imageName = ImagesFolder.child("Imaginea" +individualImage.getLastPathSegment());
+                    final StorageReference imageName = ImagesFolder.child(individualImage.getLastPathSegment());
                     imageName.putFile(individualImage).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            Toast.makeText(RestauranteEditActivity.this, "Done", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RestauranteEditActivity.this, "Imaginea " + imageName + "adaugata cu succes", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
+                progressDialog.hide();
 
 
                 firebaseFirestore.collection("restaurante").add(restauranteMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
                         Toast.makeText(RestauranteEditActivity.this, "Inserare facută cu succes!", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(RestauranteEditActivity.this, CazareEditActivity.class));
+                        startActivity(new Intent(RestauranteEditActivity.this, RestauranteEditActivity.class));
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
