@@ -22,7 +22,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-public class CazareFragment extends Fragment {
+public class CazareFragment extends Fragment implements CazareRecyclerAdapter.OnItemListener {
     FirebaseFirestore db;
     RecyclerView mRecyclerView;
     ArrayList<Cazare> cazareArrayList;
@@ -49,11 +49,11 @@ public class CazareFragment extends Fragment {
                         for (DocumentSnapshot querySnapshot: task.getResult()){
                             Cazare cazare= new Cazare(querySnapshot.getString("denumire"),
                                     querySnapshot.getString("email_contact"),
-                                    querySnapshot.getString("imagine"));
+                                    querySnapshot.getString("imagine_principala"));
 
                             cazareArrayList.add(cazare);
                         }
-                        adapter = new CazareRecyclerAdapter(CazareFragment.this, cazareArrayList);
+                        adapter = new CazareRecyclerAdapter(CazareFragment.this, cazareArrayList, CazareFragment.this);
                         mRecyclerView.setAdapter(adapter);
                     }
                 })
@@ -79,5 +79,12 @@ public class CazareFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_cazare, container, false);
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Toast.makeText(getContext(),cazareArrayList.get(position).getCazareDenumire(), Toast.LENGTH_SHORT).show();
+        /*Fragment cazarePageFragment = new CazarePageFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_place, new CazarePageFragment(), "cazarePage").addToBackStack(String.valueOf(cazarePageFragment)).commit();*/
     }
 }

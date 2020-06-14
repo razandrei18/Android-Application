@@ -7,14 +7,15 @@
     android:orientation="vertical">
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="94dp"
-        android:background="#A4B83C37"
+        android:layout_height="104dp"
+        android:background="@drawable/background_atractiii"
         android:fontFamily="times new roman"
         android:paddingTop="18dp"
+        android:paddingLeft="4dp"
         android:text="Evenimentele disponibile în orașul Gura Humorului în următoarea perioadă pot fi regăsite mai jos:"
         android:textAlignment="center"
-        android:textColor="#FFF"
-        android:textSize="18dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"
         android:textStyle="bold"/>
 
     <ScrollView
@@ -26,7 +27,7 @@
             android:id="@+id/events_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#A4B83C37"/>
+            android:background="@drawable/background_atractiii"/>
 
     </ScrollView>
 

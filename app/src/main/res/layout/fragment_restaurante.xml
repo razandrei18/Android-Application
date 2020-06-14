@@ -8,15 +8,16 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="76dp"
-        android:background="#A4B83C37"
+        android:layout_height="106dp"
+        android:background="@drawable/background_atractiii"
         android:text="Mai jos puteți găsi o listă cu restaurantele/localurile din orașul Gura Humorului:"
-        android:textColor="#FFF"
+        android:textColor="@color/colorPrimary"
         android:textAlignment="center"
         android:textStyle="bold"
-        android:textSize="18dp"
+        android:textSize="20dp"
         android:fontFamily="times new roman"
-        android:paddingTop="18dp"/>
+        android:paddingTop="18dp"
+        android:paddingLeft="4dp"/>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -25,7 +26,7 @@
             android:id="@+id/recycler_restaurante"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#A4B83C37"
+            android:background="@drawable/background_atractiii"
             android:paddingTop="8dp"/>
     </ScrollView>
 </LinearLayout>

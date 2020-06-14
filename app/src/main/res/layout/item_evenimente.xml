@@ -9,21 +9,20 @@
     app:cardUseCompatPadding="true"
     android:layout_marginBottom="2dp">
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:background="@drawable/background_atractiii">
+        android:background="#E6B83C37">
 
         <ImageView
             android:id="@+id/item_imgEveniment"
-            android:layout_marginTop="6dp"
             android:layout_width="120dp"
             android:layout_height="100dp"
+            android:layout_marginTop="11dp"
             android:layout_marginRight="10dp"
-            android:layout_marginBottom="4dp"/>
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="8dp"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -37,7 +36,7 @@
                 android:layout_marginTop="12dp"
                 android:text="Denumire"
                 android:textAlignment="viewStart"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#FFF"
                 android:textSize="22dp"
                 android:textStyle="bold" />
 
@@ -48,7 +47,7 @@
                 android:layout_marginTop="14dp"
                 android:text="Data"
                 android:textAlignment="viewStart"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#FFF"
                 android:textSize="16dp"
                 android:textStyle="bold" />
         </LinearLayout>

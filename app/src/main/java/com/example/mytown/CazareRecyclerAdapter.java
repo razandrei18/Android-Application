@@ -12,10 +12,12 @@ import java.util.ArrayList;
 public class CazareRecyclerAdapter extends RecyclerView.Adapter<CazareRecyclerView> {
     CazareFragment cazareFragment;
     ArrayList<Cazare> cazareArrayList;
+    OnItemListener mOnItemListener;
 
-    public CazareRecyclerAdapter(CazareFragment cazareFragment, ArrayList<Cazare> cazareArrayList) {
+    public CazareRecyclerAdapter(CazareFragment cazareFragment, ArrayList<Cazare> cazareArrayList, OnItemListener onItemListener) {
         this.cazareFragment = cazareFragment;
         this.cazareArrayList = cazareArrayList;
+        this.mOnItemListener = onItemListener;
     }
 
     @NonNull
@@ -23,7 +25,7 @@ public class CazareRecyclerAdapter extends RecyclerView.Adapter<CazareRecyclerVi
     public CazareRecyclerView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(cazareFragment.getContext());
         View view = layoutInflater.inflate(R.layout.item_cazare, parent, false);
-        return new CazareRecyclerView(view);
+        return new CazareRecyclerView(view, mOnItemListener);
     }
 
     @Override
@@ -36,5 +38,9 @@ public class CazareRecyclerAdapter extends RecyclerView.Adapter<CazareRecyclerVi
     @Override
     public int getItemCount() {
         return cazareArrayList.size();
+    }
+
+    public interface OnItemListener{
+        void onItemClick(int position);
     }
 }

@@ -7,14 +7,14 @@
     android:orientation="vertical">
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="94dp"
-        android:background="#FFF"
+        android:layout_height="100dp"
+        android:background="@drawable/background_atractiii"
         android:fontFamily="times new roman"
         android:paddingTop="18dp"
         android:text="În lista de mai jos sunt prezentate opțiunile de cazare din orașul Gura Humorului și detalii despre acestea:"
         android:textAlignment="center"
-        android:textColor="#000"
-        android:textSize="18dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"
         android:textStyle="bold"/>
 
     <ScrollView
@@ -26,7 +26,7 @@
             android:id="@+id/cazare_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#FFF"/>
+            android:background="@drawable/background_atractiii"/>
 
     </ScrollView>
 
