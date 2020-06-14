@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EventsFragment"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="94dp"
+        android:background="#FFF"
+        android:fontFamily="times new roman"
+        android:paddingTop="18dp"
+        android:text="În lista de mai jos sunt prezentate opțiunile de cazare din orașul Gura Humorului și detalii despre acestea:"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="18dp"
+        android:textStyle="bold"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cazare_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFF"/>
+
+    </ScrollView>
+
+
+</LinearLayout>
