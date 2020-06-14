@@ -1,10 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EventsFragment">
+    tools:context=".EventsFragment"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="94dp"
+        android:background="#A4B83C37"
+        android:fontFamily="times new roman"
+        android:paddingTop="18dp"
+        android:text="Evenimentele disponibile în orașul Gura Humorului în următoarea perioadă pot fi regăsite mai jos:"
+        android:textAlignment="center"
+        android:textColor="#FFF"
+        android:textSize="18dp"
+        android:textStyle="bold"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/events_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#A4B83C37"/>
 
-</FrameLayout>
+    </ScrollView>
+
+
+</LinearLayout>

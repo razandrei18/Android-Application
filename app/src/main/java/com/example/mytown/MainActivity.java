@@ -111,12 +111,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_place, new AtractiiFragment(), "first").addToBackStack(String.valueOf(atractiiFragment)).commit();
                 break;
 
+            case R.id.nav_events:
+                Fragment eventsFragment = new EventsFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_place, new EventsFragment(), "events").addToBackStack(String.valueOf(eventsFragment)).commit();
+                break;
+
             case R.id.nav_cazare:
                 if (firebaseUser == null) {
                     Toast.makeText(MainActivity.this, "Vă rugăm să vă logați pentru a putea accesa această secțiune!", Toast.LENGTH_LONG).show();
                 } else {
-                    //~~~~~~~~~~MODIFICARE CU FRAGMENTUL  PENTRU CAZARE!!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                    Toast.makeText(MainActivity.this, "Sectiunea cazare accesata cu succes", Toast.LENGTH_LONG).show();
+                    Fragment cazareFragment = new CazareFragment();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_place, new CazareFragment(), "cazare").addToBackStack(String.valueOf(cazareFragment)).commit();
                 }
                 break;
             case R.id.nav_restaurants:
