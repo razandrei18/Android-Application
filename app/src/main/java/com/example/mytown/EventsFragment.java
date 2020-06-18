@@ -1,6 +1,7 @@
 package com.example.mytown;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -25,7 +26,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 
 
-public class EventsFragment extends Fragment {
+public class EventsFragment extends Fragment implements EventsRecyclerAdapter.OnItemListener {
     FirebaseFirestore db;
     RecyclerView mRecyclerView;
     ArrayList<Eveniment> evenimentArrayList;
@@ -52,11 +53,12 @@ public class EventsFragment extends Fragment {
                         for (DocumentSnapshot querySnapshot: task.getResult()){
                             Eveniment eveniment= new Eveniment(querySnapshot.getString("denumire"),
                                     querySnapshot.getString("data_inceperii"),
-                                    querySnapshot.getString("imagine"));
+                                    querySnapshot.getString("imagine"),
+                                    querySnapshot.getString("detalii"));
 
                             evenimentArrayList.add(eveniment);
                         }
-                        adapter = new EventsRecyclerAdapter(EventsFragment.this, evenimentArrayList);
+                        adapter = new EventsRecyclerAdapter(EventsFragment.this, evenimentArrayList, EventsFragment.this);
                         mRecyclerView.setAdapter(adapter);
                     }
                 })
@@ -84,5 +86,15 @@ public class EventsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_events, container, false);
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent i = new Intent(getContext(), EventsDetailsPage.class);
+        i.putExtra("titlu", evenimentArrayList.get(position).getEventDenumire());
+        i.putExtra("descriere", evenimentArrayList.get(position).getEventDescriere());
+        i.putExtra("data", evenimentArrayList.get(position).getEventData());
+        i.putExtra("imagine", evenimentArrayList.get(position).getEventImg());
+        getContext().startActivity(i);
     }
 }

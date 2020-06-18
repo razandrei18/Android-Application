@@ -1,13 +1,13 @@
 package com.example.mytown;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
+
 
 public class CazareRecyclerAdapter extends RecyclerView.Adapter<CazareRecyclerView> {
     CazareFragment cazareFragment;
@@ -29,9 +29,9 @@ public class CazareRecyclerAdapter extends RecyclerView.Adapter<CazareRecyclerVi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CazareRecyclerView holder, int position) {
+    public void onBindViewHolder(@NonNull CazareRecyclerView holder, final int position) {
         holder.cazareDenum.setText(cazareArrayList.get(position).getCazareDenumire());
-        holder.cazareDet.setText("Email contact: "+cazareArrayList.get(position).getCazareDetalii());
+        holder.cazareDet.setText("Email contact: "+cazareArrayList.get(position).getCazareEmailContact());
         holder.setImage(cazareFragment.getContext(), cazareArrayList.get(position).getCazareImg());
     }
 

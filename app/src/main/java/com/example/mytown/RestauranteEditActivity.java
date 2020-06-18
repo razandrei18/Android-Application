@@ -88,7 +88,7 @@ public class RestauranteEditActivity extends AppCompatActivity {
                 Map<String, String> restauranteMap = new HashMap<>();
 
                 restauranteMap.put("denumire", nume);
-                restauranteMap.put("descriere", detalii);
+                restauranteMap.put("detalii", detalii);
                 restauranteMap.put("detalii_contact", dateCont);
 
                 //adaugare imagini in Firebase Storage

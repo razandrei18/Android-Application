@@ -17,7 +17,11 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".atractii.mytown.partie.mytown.VideoPartie"></activity>
+        <activity android:name=".RestaurantDetailsPage"></activity>
+        <activity android:name=".EventsDetailsPage" />
+        <activity android:name=".MailActivity" />
+        <activity android:name=".CazareDetailPage" />
+        <activity android:name=".atractii.mytown.partie.mytown.VideoPartie" />
         <activity android:name=".EventsEditActivity" />
         <activity android:name=".RestauranteEditActivity" />
         <activity android:name=".CazareEditActivity" />

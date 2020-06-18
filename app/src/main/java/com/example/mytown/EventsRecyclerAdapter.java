@@ -13,10 +13,12 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerVi
 
     EventsFragment eventsFragment;
     ArrayList<Eveniment> evenimentArrayList;
+    OnItemListener onItemListener;
 
-    public EventsRecyclerAdapter(EventsFragment eventsFragment, ArrayList<Eveniment> evenimentArrayList) {
+    public EventsRecyclerAdapter(EventsFragment eventsFragment, ArrayList<Eveniment> evenimentArrayList, OnItemListener onItemListener) {
         this.eventsFragment = eventsFragment;
         this.evenimentArrayList = evenimentArrayList;
+        this.onItemListener = onItemListener;
     }
 
     @NonNull
@@ -24,7 +26,7 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerVi
     public EventsRecyclerView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(eventsFragment.getContext());
         View view = layoutInflater.inflate(R.layout.item_evenimente, parent, false);
-        return new EventsRecyclerView(view);
+        return new EventsRecyclerView(view, onItemListener);
     }
 
     @Override
@@ -37,5 +39,9 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerVi
     @Override
     public int getItemCount() {
         return evenimentArrayList.size();
+    }
+
+    public interface OnItemListener{
+        void onItemClick(int position);
     }
 }

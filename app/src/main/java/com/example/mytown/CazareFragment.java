@@ -1,5 +1,6 @@
 package com.example.mytown;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -49,7 +50,9 @@ public class CazareFragment extends Fragment implements CazareRecyclerAdapter.On
                         for (DocumentSnapshot querySnapshot: task.getResult()){
                             Cazare cazare= new Cazare(querySnapshot.getString("denumire"),
                                     querySnapshot.getString("email_contact"),
-                                    querySnapshot.getString("imagine_principala"));
+                                    querySnapshot.getString("imagine_principala"),
+                                    querySnapshot.getString("descriere"),
+                                    querySnapshot.getString("detalii_contact"));
 
                             cazareArrayList.add(cazare);
                         }
@@ -83,8 +86,12 @@ public class CazareFragment extends Fragment implements CazareRecyclerAdapter.On
 
     @Override
     public void onItemClick(int position) {
-        Toast.makeText(getContext(),cazareArrayList.get(position).getCazareDenumire(), Toast.LENGTH_SHORT).show();
-        /*Fragment cazarePageFragment = new CazarePageFragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_place, new CazarePageFragment(), "cazarePage").addToBackStack(String.valueOf(cazarePageFragment)).commit();*/
+        Intent i = new Intent(getContext(), CazareDetailPage.class);
+        i.putExtra("titlu", cazareArrayList.get(position).getCazareDenumire());
+        i.putExtra("email_contact", cazareArrayList.get(position).getCazareEmailContact());
+        i.putExtra("descriere", cazareArrayList.get(position).getCazareDescriere());
+        i.putExtra("imagine", cazareArrayList.get(position).getCazareImg());
+        i.putExtra("detalii_contact", cazareArrayList.get(position).getCazareDetaliiContact());
+        getContext().startActivity(i);
     }
 }

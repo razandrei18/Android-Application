@@ -15,10 +15,12 @@ public class RestauranteRecyclerAdapter extends RecyclerView.Adapter<Restaurante
 
     RestauranteFragment restauranteFragment;
     ArrayList<Restanurant> restanurantArrayList;
+    OnItemListener onItemListener;
 
-    public RestauranteRecyclerAdapter(RestauranteFragment restauranteFragment, ArrayList<Restanurant> restanurantArrayList) {
+    public RestauranteRecyclerAdapter(RestauranteFragment restauranteFragment, ArrayList<Restanurant> restanurantArrayList, OnItemListener onItemListener) {
         this.restauranteFragment = restauranteFragment;
         this.restanurantArrayList = restanurantArrayList;
+        this.onItemListener = onItemListener;
     }
 
     @NonNull
@@ -26,7 +28,7 @@ public class RestauranteRecyclerAdapter extends RecyclerView.Adapter<Restaurante
     public RestauranteRecyclerView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(restauranteFragment.getContext());
         View view= layoutInflater.inflate(R.layout.restaurante_item, parent, false);
-        return new RestauranteRecyclerView(view);
+        return new RestauranteRecyclerView(view, onItemListener);
     }
 
     @Override
@@ -39,5 +41,9 @@ public class RestauranteRecyclerAdapter extends RecyclerView.Adapter<Restaurante
     @Override
     public int getItemCount() {
         return restanurantArrayList.size();
+    }
+
+    public interface OnItemListener{
+        void onItemClick(int position);
     }
 }

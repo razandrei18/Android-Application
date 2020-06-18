@@ -1,5 +1,6 @@
 package com.example.mytown;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -24,7 +24,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 
 
-public class RestauranteFragment extends Fragment {
+public class RestauranteFragment extends Fragment implements RestauranteRecyclerAdapter.OnItemListener {
     FirebaseFirestore db;
     RecyclerView mRecyclerView;
     ArrayList<Restanurant> restaurantList;
@@ -50,11 +50,13 @@ public class RestauranteFragment extends Fragment {
                         for (DocumentSnapshot querySnapshot: task.getResult()){
                             Restanurant restanurant = new Restanurant(querySnapshot.getString("denumire"),
                                                                         querySnapshot.getString("detalii"),
-                                                                        querySnapshot.getString("imagine"));
+                                                                        querySnapshot.getString("imagine"),
+                                                                        querySnapshot.getString("detalii_contact")
+                                                                       );
 
                             restaurantList.add(restanurant);
                         }
-                        adapter = new RestauranteRecyclerAdapter(RestauranteFragment.this, restaurantList);
+                        adapter = new RestauranteRecyclerAdapter(RestauranteFragment.this, restaurantList, RestauranteFragment.this);
                         mRecyclerView.setAdapter(adapter);
                     }
                 })
@@ -81,5 +83,15 @@ public class RestauranteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_restaurante, container, false);
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent i = new Intent(getContext(), RestaurantDetailsPage.class);
+        i.putExtra("titlu", restaurantList.get(position).getRestDenumire());
+        i.putExtra("detaliiRest", restaurantList.get(position).getRestDescriere());
+        i.putExtra("contactRest", restaurantList.get(position).getRestContact());
+        i.putExtra("imagineRest", restaurantList.get(position).getRestImg());
+        getContext().startActivity(i);
     }
 }
