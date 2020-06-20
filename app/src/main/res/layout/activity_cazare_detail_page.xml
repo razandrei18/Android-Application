@@ -15,6 +15,7 @@
         android:layout_marginTop="26dp"
         android:layout_marginBottom="20dp"
         android:text="Titlu"
+        android:background="@drawable/title_background"
         android:textStyle="bold"
         android:fontFamily="times new roman"
         android:textColor="#FFF"
@@ -51,7 +52,8 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:textColor="#FFF"
             android:text="Descriere"

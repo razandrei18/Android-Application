@@ -26,7 +26,7 @@ public class EventsDetailsPage extends AppCompatActivity {
 
         pEvTitlu.setText(data.getStringExtra("titlu"));
         pEvDescriere.setText(Html.fromHtml(data.getStringExtra("descriere")));
-        pEvData.setText(data.getStringExtra("data"));
+        pEvData.setText("Data începerii: "+data.getStringExtra("data"));
         setImage(data.getStringExtra("imagine"));
     }
 

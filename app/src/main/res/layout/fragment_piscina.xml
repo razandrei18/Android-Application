@@ -14,7 +14,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Piscina Ariniș"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#FFF"
+            android:background="@drawable/title_background"
             android:textSize="28sp"
             android:textStyle="bold"
             android:textAlignment="center"
@@ -52,7 +53,7 @@
                     android:textSize="24sp"
                     android:textStyle="bold"
                     android:textAlignment="center"
-                    android:background="@color/colorPrimary"
+                   android:background="@drawable/title_background"
                     android:textColor="@color/titleColor"
                     android:padding="6dp"/>
 

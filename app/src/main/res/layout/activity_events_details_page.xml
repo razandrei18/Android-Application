@@ -18,6 +18,7 @@
         android:text="Titlu"
         android:textAlignment="center"
         android:textColor="#FFF"
+        android:background="@drawable/title_background"
         android:textSize="30dp"
         android:textStyle="bold" />
 
@@ -59,6 +60,7 @@
                 android:text="Descriere"
                 android:textAlignment="center"
                 android:textColor="#FFF"
+                android:background="@drawable/title_background"
                 android:textSize="24dp"
                 android:textStyle="bold" />
 

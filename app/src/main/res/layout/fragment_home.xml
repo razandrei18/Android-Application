@@ -73,7 +73,7 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <TextView
+                <com.codesgood.views.JustifiedTextView
                     android:id="@+id/textView2_descripIG"
                     android:layout_width="match_parent"
                     android:layout_height="196dp"
@@ -104,7 +104,7 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <TextView
+                <com.codesgood.views.JustifiedTextView
                     android:id="@+id/textView2_descripAG"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

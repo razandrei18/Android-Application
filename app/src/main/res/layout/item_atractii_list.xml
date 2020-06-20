@@ -3,15 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="160dp"
+    android:layout_height="180dp"
     android:id="@+id/item_layout"
-    android:padding="4dp">
+    android:padding="4dp"
+    >
 
 
     <ImageView
         android:id="@+id/item_imageviewAtr"
         android:layout_width="190dp"
-        android:layout_height="160dp"
+        android:layout_height="180dp"
         android:layout_marginLeft="4dp"
         android:src="@mipmap/ic_launcher" />
 

@@ -17,7 +17,8 @@
             android:padding="6dp"
             android:text="Muzeul Obiceiurilor Populare din Bucovina"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#FFF"
+            android:background="@drawable/title_background"
             android:textSize="24sp"
             android:textStyle="bold"
             android:typeface="serif" />
@@ -106,7 +107,7 @@
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
-                <TextView
+                <com.codesgood.views.JustifiedTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"

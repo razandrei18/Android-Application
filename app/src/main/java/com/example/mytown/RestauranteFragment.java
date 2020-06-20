@@ -51,7 +51,8 @@ public class RestauranteFragment extends Fragment implements RestauranteRecycler
                             Restanurant restanurant = new Restanurant(querySnapshot.getString("denumire"),
                                                                         querySnapshot.getString("detalii"),
                                                                         querySnapshot.getString("imagine"),
-                                                                        querySnapshot.getString("detalii_contact")
+                                                                        querySnapshot.getString("detalii_contact"),
+                                                                        querySnapshot.getString("imagine_menu")
                                                                        );
 
                             restaurantList.add(restanurant);
@@ -92,6 +93,7 @@ public class RestauranteFragment extends Fragment implements RestauranteRecycler
         i.putExtra("detaliiRest", restaurantList.get(position).getRestDescriere());
         i.putExtra("contactRest", restaurantList.get(position).getRestContact());
         i.putExtra("imagineRest", restaurantList.get(position).getRestImg());
+        i.putExtra("imagineMenu", restaurantList.get(position).getRestImgMenu());
         getContext().startActivity(i);
     }
 }

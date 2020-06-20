@@ -6,12 +6,14 @@ public class Restanurant {
     private String restDescriere;
     private String restImg;
     private String restContact;
+    private String restImgMenu;
 
-    public Restanurant(String restDenumire, String restDescriere, String restImg, String restContact) {
+    public Restanurant(String restDenumire, String restDescriere, String restImg, String restContact, String restImgMenu) {
         this.restDenumire = restDenumire;
         this.restDescriere = restDescriere;
         this.restImg = restImg;
         this.restContact = restContact;
+        this.restImgMenu = restImgMenu;
     }
 
     public String getRestDenumire() {
@@ -44,5 +46,13 @@ public class Restanurant {
 
     public void setRestContact(String restContact) {
         this.restContact = restContact;
+    }
+
+    public String getRestImgMenu() {
+        return restImgMenu;
+    }
+
+    public void setRestImgMenu(String restImgMenu) {
+        this.restImgMenu = restImgMenu;
     }
 }
