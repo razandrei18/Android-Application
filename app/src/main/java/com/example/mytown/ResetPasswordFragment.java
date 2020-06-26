@@ -22,9 +22,9 @@ import com.google.firebase.auth.FirebaseUser;
 
 
 public class ResetPasswordFragment extends Fragment {
-   EditText resetMail;
-   Button sendButton;
-   FirebaseAuth firebaseAuth;
+    EditText resetMail;
+    Button sendButton;
+    FirebaseAuth firebaseAuth;
 
     public ResetPasswordFragment() {
         // Required empty public constructor
@@ -43,16 +43,17 @@ public class ResetPasswordFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_reset_password, container, false);
     }
+
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         resetMail = getView().findViewById(R.id.mail_reset);
         sendButton = getView().findViewById(R.id.sendBtnReset);
-        firebaseAuth = firebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
 
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String mail= resetMail.getText().toString().trim();
+                String mail = resetMail.getText().toString().trim();
                 firebaseAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {

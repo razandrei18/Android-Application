@@ -29,6 +29,7 @@ public class RestauranteFragment extends Fragment implements RestauranteRecycler
     RecyclerView mRecyclerView;
     ArrayList<Restanurant> restaurantList;
     RestauranteRecyclerAdapter adapter;
+
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -39,7 +40,7 @@ public class RestauranteFragment extends Fragment implements RestauranteRecycler
     }
 
     private void loadDataFromFirebase() {
-        if(restaurantList.size()>0)
+        if (restaurantList.size() > 0)
             restaurantList.clear();
 
         db.collection("restaurante")
@@ -47,13 +48,13 @@ public class RestauranteFragment extends Fragment implements RestauranteRecycler
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        for (DocumentSnapshot querySnapshot: task.getResult()){
+                        for (DocumentSnapshot querySnapshot : task.getResult()) {
                             Restanurant restanurant = new Restanurant(querySnapshot.getString("denumire"),
-                                                                        querySnapshot.getString("detalii"),
-                                                                        querySnapshot.getString("imagine"),
-                                                                        querySnapshot.getString("detalii_contact"),
-                                                                        querySnapshot.getString("imagine_menu")
-                                                                       );
+                                    querySnapshot.getString("detalii"),
+                                    querySnapshot.getString("imagine"),
+                                    querySnapshot.getString("detalii_contact"),
+                                    querySnapshot.getString("imagine_menu")
+                            );
 
                             restaurantList.add(restanurant);
                         }

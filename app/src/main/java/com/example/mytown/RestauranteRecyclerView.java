@@ -12,7 +12,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class RestauranteRecyclerView extends RecyclerView.ViewHolder implements View.OnClickListener{
+public class RestauranteRecyclerView extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     public TextView restDenum, restDesc;
     public ImageView restImagine;
@@ -29,10 +29,11 @@ public class RestauranteRecyclerView extends RecyclerView.ViewHolder implements 
 
     }
 
-    public void setImage(Context context, String image){
+    public void setImage(Context context, String image) {
         restImagine = itemView.findViewById(R.id.item_imgRest);
         Picasso.get().load(image).into(restImagine);
     }
+
     public void onClick(View v) {
         onItemListener.onItemClick(getAdapterPosition());
     }

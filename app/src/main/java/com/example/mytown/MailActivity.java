@@ -29,12 +29,13 @@ public class MailActivity extends AppCompatActivity {
     EditText emailSubiect, emailMesaj;
     Button btnTrimitere;
     String sEmail, sPassword;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mail);
 
-        final Intent dataMail= getIntent();
+        final Intent dataMail = getIntent();
 
         emailSubiect = findViewById(R.id.mail_subject);
         emailMesaj = findViewById(R.id.mail_mesaj);
@@ -54,7 +55,7 @@ public class MailActivity extends AppCompatActivity {
                 properties.put("mail.smtp.host", "smtp.gmail.com");
                 properties.put("mail.smtp.port", "587");
 
-                Session session= Session.getInstance(properties, new Authenticator() {
+                Session session = Session.getInstance(properties, new Authenticator() {
                     @Override
                     protected PasswordAuthentication getPasswordAuthentication() {
                         return new PasswordAuthentication(sEmail, sPassword);
@@ -62,7 +63,7 @@ public class MailActivity extends AppCompatActivity {
                 });
 
                 try {
-                    Message message=new MimeMessage(session);
+                    Message message = new MimeMessage(session);
                     message.setFrom(new InternetAddress(sEmail));
                     message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(dataMail.getStringExtra("email_contact")));
                     message.setSubject(emailSubiect.getText().toString().trim());
@@ -77,7 +78,7 @@ public class MailActivity extends AppCompatActivity {
 
     }
 
-    private class SendMail  extends AsyncTask<Message, String, String> {
+    private class SendMail extends AsyncTask<Message, String, String> {
         //initializarea progress dialog ului
         private ProgressDialog progressDialog;
 
@@ -123,11 +124,10 @@ public class MailActivity extends AppCompatActivity {
                 });
 
                 builder.show();
-            }
-            else {
+            } else {
                 Toast.makeText(getApplicationContext(), "Ceva nu a functionat!", Toast.LENGTH_SHORT).show();
-                }
             }
         }
     }
+}
 

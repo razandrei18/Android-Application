@@ -12,7 +12,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="178dp"
             android:src="@drawable/echipament_instructaj" />
 
         <TextView
@@ -45,7 +45,7 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <Justi
+                <com.codesgood.views.JustifiedTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#DFF7DEA9"
@@ -64,7 +64,7 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <TextView
+                <com.codesgood.views.JustifiedTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#DFF7DEA9"
@@ -83,7 +83,7 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <TextView
+                <com.codesgood.views.JustifiedTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#DFF7DEA9"

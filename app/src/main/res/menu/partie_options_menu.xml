@@ -6,6 +6,6 @@
         android:title="Detalii Tehnice"></item>
     <item
         android:id="@+id/galerie_partie_button"
-        android:title="Galerie Foto/Video"></item>
+        android:title="Prezentare Video"></item>
 
 </menu>

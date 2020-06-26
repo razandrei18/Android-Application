@@ -34,6 +34,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
             android:text="Mai multe imagini ➮"
+            android:textColor="#FFF"
+            android:background="@drawable/title_background"
             android:textAlignment="viewEnd"
             android:textSize="12sp"
             android:textStyle="bold" />

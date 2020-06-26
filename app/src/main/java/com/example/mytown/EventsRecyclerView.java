@@ -4,8 +4,10 @@ import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.squareup.picasso.Picasso;
 
 public class EventsRecyclerView extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -21,7 +23,8 @@ public class EventsRecyclerView extends RecyclerView.ViewHolder implements View.
         itemView.setOnClickListener(this);
 
     }
-    public void setImage(Context context, String image){
+
+    public void setImage(Context context, String image) {
         eventImagine = itemView.findViewById(R.id.item_imgEveniment);
         Picasso.get().load(image).into(eventImagine);
     }

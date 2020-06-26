@@ -38,14 +38,15 @@ public class LoginFragment extends Fragment {
     TextView loginRegister;
     TextView resetPassword;
     FirebaseAuth firebaseAuth;
+
     public LoginFragment() {
         // Required empty public constructor
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-                super.onCreate(savedInstanceState);
-        }
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -54,6 +55,7 @@ public class LoginFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_login, container, false);
 
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -63,10 +65,9 @@ public class LoginFragment extends Fragment {
         loginButton = getView().findViewById(R.id.login_button);
         loginRegister = getView().findViewById(R.id.textview_inregistrare);
         resetPassword = getView().findViewById(R.id.resetPassword_id);
-        firebaseAuth = firebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
 
-        if(firebaseAuth.getCurrentUser() != null)
-        {
+        if (firebaseAuth.getCurrentUser() != null) {
             getFragmentManager().beginTransaction().replace(R.id.fragment_place, new HomeFragment(), "homeFragment").addToBackStack(String.valueOf(new HomeFragment())).commit();
         }
 
@@ -78,11 +79,11 @@ public class LoginFragment extends Fragment {
                 String mail = loginUsername.getText().toString().trim();
                 String pwd = loginPassword.getText().toString().trim();
 
-                if(TextUtils.isEmpty(mail)){ //verificam daca email ul a fost introdus
+                if (TextUtils.isEmpty(mail)) { //verificam daca email ul a fost introdus
                     loginUsername.setError("Va rugam introduceti adresa de email");
                     return;
                 }
-                if (TextUtils.isEmpty(pwd) || pwd.length() < 6){  //verificam daca parola a fost introdusa si este de minim 6 caractere
+                if (TextUtils.isEmpty(pwd) || pwd.length() < 6) {  //verificam daca parola a fost introdusa si este de minim 6 caractere
                     loginUsername.setError("Va rugam introduceti o parola de minim 6 caractere");
                     return;
                 }
@@ -93,7 +94,7 @@ public class LoginFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         String mail = loginUsername.getText().toString().trim();
-                        if(task.isSuccessful()) {
+                        if (task.isSuccessful()) {
                             if (mail.contentEquals("razvanioan.andrei22@gmail.com")) {
                                 Toast.makeText(LoginFragment.this.getContext(), "Sunteti în modul Admin.", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getActivity(), AdminActivity.class));
@@ -101,8 +102,7 @@ public class LoginFragment extends Fragment {
                                 Toast.makeText(LoginFragment.this.getContext(), "Autentificare reusita", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getActivity(), MainActivity.class));
                             }
-                        }
-                        else {
+                        } else {
                             Toast.makeText(LoginFragment.this.getContext(), "Autentificarea a esuat", Toast.LENGTH_LONG).show();
                         }
                     }

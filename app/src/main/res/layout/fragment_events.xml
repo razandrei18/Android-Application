@@ -3,20 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EventsFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".EventsFragment">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="104dp"
         android:background="@drawable/background_atractiii"
         android:fontFamily="times new roman"
-        android:paddingTop="18dp"
         android:paddingLeft="4dp"
+        android:paddingTop="18dp"
         android:text="Evenimentele disponibile în orașul Gura Humorului în următoarea perioadă pot fi regăsite mai jos:"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textSize="20dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,7 +28,7 @@
             android:id="@+id/events_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/background_atractiii"/>
+            android:background="@drawable/background_atractiii" />
 
     </ScrollView>
 

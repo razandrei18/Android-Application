@@ -25,7 +25,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class HomeFragment extends Fragment {
 
     ViewFlipper viewFlipper;
-    int images[] = {R.drawable.ghh2,R.drawable.primaria_gh,R.drawable.ghh, R.drawable.ghh4, R.drawable.ghh3, R.drawable.ghh5};
+    int[] images = {R.drawable.ghh2, R.drawable.primaria_gh, R.drawable.ghh, R.drawable.ghh4, R.drawable.ghh3, R.drawable.ghh5};
     TextView currentUser;
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
@@ -47,13 +47,12 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         currentUser = getActivity().findViewById(R.id.current_userMail);
 
-        firebaseAuth =firebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
-        if(firebaseUser == null){
+        if (firebaseUser == null) {
             currentUser.setText("Nu sunteti autentificat");
             currentUser.setVisibility(View.INVISIBLE);
-        }
-        else{
+        } else {
 
             currentUser.setVisibility(View.VISIBLE);
             currentUser.setText("Bun venit, " + firebaseUser.getEmail() + "!");
@@ -65,7 +64,6 @@ public class HomeFragment extends Fragment {
         }
 
     }
-
 
 
     public void imageFlipper(int image) {

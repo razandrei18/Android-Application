@@ -11,29 +11,29 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/colorPrimary">
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/current_userMail"
-                    android:layout_height="26dp"
-                    android:layout_width="match_parent"
-                    android:fontFamily="@font/volkhov_bold"
-                    android:textAlignment="center"
-                    android:textColor="#FFFF"
-                    android:textSize="14dp"
-                    android:padding="2dp"
-                    android:background="@color/colorPrimary"/>
-
+        <TextView
+            android:id="@+id/current_userMail"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/title_background"
+            android:fontFamily="@font/volkhov_bold"
+            android:padding="6dp"
+            android:textAlignment="center"
+            android:textColor="#FFFF"
+            android:textSize="14dp" />
 
 
         <ViewFlipper
             android:id="@+id/viewFlipper"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:background="#FFFF"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/ghh"
-            android:background="#FFFF"/>
+            app:srcCompat="@drawable/ghh" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -64,11 +64,11 @@
                     android:id="@+id/textView_ig"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="times new roman"
                     android:paddingLeft="12dp"
                     android:paddingTop="10dp"
                     android:paddingBottom="4dp"
                     android:text="Informații Generale ✓"
-                    android:fontFamily="times new roman"
                     android:textColor="@color/textColor"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -95,11 +95,11 @@
                     android:id="@+id/textView_ist"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="times new roman"
                     android:paddingLeft="12dp"
                     android:paddingTop="10dp"
                     android:paddingBottom="4dp"
                     android:text="Așezarea Geografică ➤"
-                    android:fontFamily="times new roman"
                     android:textColor="@color/textColor"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -122,10 +122,9 @@
                     android:id="@+id/imageView"
                     android:layout_width="match_parent"
                     android:layout_height="240dp"
+                    android:paddingTop="8dp"
                     android:scaleType="fitXY"
-                    android:src="@drawable/harta"
-                    android:paddingTop="8dp"/>
-
+                    android:src="@drawable/harta" />
 
 
             </LinearLayout>

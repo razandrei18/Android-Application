@@ -47,7 +47,7 @@ public class RestauranteEditActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurante_edit);
-        numeRest= findViewById(R.id.edit_restaurantName);
+        numeRest = findViewById(R.id.edit_restaurantName);
         detaliiRest = findViewById(R.id.edit_restaurantDetalii);
         dateContact = findViewById(R.id.edit_restaurantContact);
         alert = findViewById(R.id.edit_restauranteTextViewImg);
@@ -94,7 +94,7 @@ public class RestauranteEditActivity extends AppCompatActivity {
                 //adaugare imagini in Firebase Storage
                 progressDialog.show();
                 StorageReference ImagesFolder = FirebaseStorage.getInstance().getReference().child(nume);
-                for(upload_count = 0; upload_count < ImageList.size(); upload_count++){
+                for (upload_count = 0; upload_count < ImageList.size(); upload_count++) {
                     Uri individualImage = ImageList.get(upload_count);
                     final StorageReference imageName = ImagesFolder.child(individualImage.getLastPathSegment());
                     imageName.putFile(individualImage).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -128,20 +128,19 @@ public class RestauranteEditActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == RESULT_LOAD_IMAGE1 &&resultCode== RESULT_OK){
+        if (requestCode == RESULT_LOAD_IMAGE1 && resultCode == RESULT_OK) {
 
-            if(data.getClipData() != null){
+            if (data.getClipData() != null) {
                 int countImages = data.getClipData().getItemCount();
-                int currentImageSelect= 0;
-                while (currentImageSelect<countImages){
+                int currentImageSelect = 0;
+                while (currentImageSelect < countImages) {
                     imageUri = data.getClipData().getItemAt(currentImageSelect).getUri();
                     ImageList.add(imageUri);
                     currentImageSelect++;
                 }
                 alert.setVisibility(View.VISIBLE);
                 alert.setText("Au fost selectate " + ImageList.size() + " imagini.");
-            }
-            else {
+            } else {
                 Toast.makeText(RestauranteEditActivity.this, "Vă rugăm selectați cel puțin 2 imagini", Toast.LENGTH_SHORT).show();
             }
         }

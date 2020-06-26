@@ -27,7 +27,7 @@ public class RestauranteRecyclerAdapter extends RecyclerView.Adapter<Restaurante
     @Override
     public RestauranteRecyclerView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(restauranteFragment.getContext());
-        View view= layoutInflater.inflate(R.layout.restaurante_item, parent, false);
+        View view = layoutInflater.inflate(R.layout.restaurante_item, parent, false);
         return new RestauranteRecyclerView(view, onItemListener);
     }
 
@@ -43,7 +43,7 @@ public class RestauranteRecyclerAdapter extends RecyclerView.Adapter<Restaurante
         return restanurantArrayList.size();
     }
 
-    public interface OnItemListener{
+    public interface OnItemListener {
         void onItemClick(int position);
     }
 }

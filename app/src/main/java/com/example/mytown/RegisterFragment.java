@@ -62,8 +62,7 @@ public class RegisterFragment extends Fragment {
         firebaseAuth = FirebaseAuth.getInstance();
         progressBar = getView().findViewById(R.id.progressBar);
 
-        if(firebaseAuth.getCurrentUser() != null)
-        {
+        if (firebaseAuth.getCurrentUser() != null) {
             getFragmentManager().beginTransaction().replace(R.id.fragment_place, new HomeFragment(), "homeFragment").addToBackStack(String.valueOf(new HomeFragment())).commit();
         }
 
@@ -74,11 +73,11 @@ public class RegisterFragment extends Fragment {
                 String mail = registerEmail.getText().toString().trim();
                 String pwd = registerPassword.getText().toString().trim();
 
-                if(TextUtils.isEmpty(mail)){ //verificam daca email ul a fost introdus
+                if (TextUtils.isEmpty(mail)) { //verificam daca email ul a fost introdus
                     registerEmail.setError("Va rugam introduceti adresa de email");
                     return;
                 }
-                if (TextUtils.isEmpty(pwd) || pwd.length() < 6){  //verificam daca parola a fost introdusa si este de minim 6 caractere
+                if (TextUtils.isEmpty(pwd) || pwd.length() < 6) {  //verificam daca parola a fost introdusa si este de minim 6 caractere
                     registerEmail.setError("Va rugam introduceti o parola de minim 6 caractere");
                     return;
                 }
@@ -89,11 +88,10 @@ public class RegisterFragment extends Fragment {
                 firebaseAuth.createUserWithEmailAndPassword(mail, pwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             Toast.makeText(RegisterFragment.this.getContext(), "Cont creat cu succes", Toast.LENGTH_LONG).show();
                             getFragmentManager().beginTransaction().replace(R.id.fragment_place, new LoginFragment(), "loginFrag").addToBackStack(String.valueOf(new LoginFragment())).commit();
-                        }
-                        else {
+                        } else {
                             Toast.makeText(RegisterFragment.this.getContext(), "Eroare la crearea contului", Toast.LENGTH_LONG).show();
                         }
                     }
